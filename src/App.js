@@ -11,6 +11,16 @@ import history from '@utils/history'
 import { Provider } from 'react-redux'
 // 引入创建好的store实例
 import store from './store/index.js'
+// import Cookies from 'js-cookie'
+// 受保护页面拦截器，在本级页面进行拦截，如果发现未登录，则跳转到登录页面，否则允许进入隐私页面
+// const ProtectPage = props => {
+//   // 如果没有登录
+//   if (!Cookies.get('token')) {
+//       return <Redirect to="/login"></Redirect>
+//   } else {
+//       return <Layout {...props}/>
+//   }
+// }
 
 class App extends Component {
   render() {
@@ -20,6 +30,8 @@ class App extends Component {
           <div className="App">
             <Switch>
               <Route path="/login" component={Login} />
+              {/* 使用 component={ProtectPage} 将会拦截全部Layput下面的路由 */}
+              {/* <Route path="/" component={ProtectPage} /> */} 
               <Route path="/" component={Layout} />
             </Switch>
           </div>

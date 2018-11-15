@@ -6,17 +6,21 @@ import ChangePwd from '@components/changePwd/ChangePwd'
 const confirm = Modal.confirm;
 
 class Mine extends Component {
-
-  state = {
-    visible: false
+  constructor (props) {
+    super(props)
+    this.state = {
+      visible: false
+    }
   }
-
+  
   onClick = ({ key }) => {
     if(key === 'logout') {
       confirm({
         title: '退出提示',
         content: '您退出当前账号？',
         onOk() {
+          localStorage.removeItem('auth')
+          this.props.history.push('/login')
           console.log('退出')
         }
       })

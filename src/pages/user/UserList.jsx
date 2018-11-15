@@ -7,8 +7,11 @@ const FormItem = Form.Item;
 const { RangePicker } = DatePicker;
 
 class UserList extends Component {
-  state = {
-    visible: false
+  constructor (props) {
+    super(props)
+    this.state = {
+      visible: false
+    }
   }
 
   componentDidMount() {

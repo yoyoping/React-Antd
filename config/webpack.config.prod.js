@@ -229,7 +229,8 @@ module.exports = {
       '@pages': path.resolve(__dirname, '../src/pages'),
       '@store': path.resolve(__dirname, '../src/store'),
       '@fetch': path.resolve(__dirname, '../src/fetch'),
-      '@axios': path.resolve(__dirname, '../src/fetch/axios.js')
+      '@axios': path.resolve(__dirname, '../src/fetch/axios.js'),
+      '@': path.resolve(__dirname, '../src')
     },
     plugins: [
       // Adds support for installing with Plug'n'Play, leading to faster installs and adding

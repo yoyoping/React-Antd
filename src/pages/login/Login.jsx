@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Form, Icon, Input, Button } from 'antd';
 import './login.scss';
+import Cookies from 'js-cookie'
+
 const FormItem = Form.Item;
 
 class NormalLoginForm extends Component {
@@ -8,7 +10,11 @@ class NormalLoginForm extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        this.props.history.push('/purchaseList')
+        // 设置token就代表已经登录
+        Cookies.set('token', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+        // 设置你的权限
+        localStorage.setItem('auth', values.username)
+        this.props.history.push('/')
       }
     });
   }
@@ -21,7 +27,7 @@ class NormalLoginForm extends Component {
           <h1>登录</h1>
           <Form onSubmit={this.handleSubmit}>
             <FormItem>
-              {getFieldDecorator('userName', {
+              {getFieldDecorator('username', {
                 rules: [{ required: true, message: '请输入你的账号！' }],
               })(
                 <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />

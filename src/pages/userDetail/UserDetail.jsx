@@ -50,6 +50,10 @@ const data = [
 
 class UserDetail extends Component {
 
+  componentDidMount () {
+    console.log(this.props)
+  }
+
   /**
    * 给偶数行设置样式
    * @memberof UserDetail
