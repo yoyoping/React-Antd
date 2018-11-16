@@ -1,3 +1,6 @@
+/**
+ * 权限不足展示页面
+ */
 import React, { Component } from 'react';
 
 class NoPermissions extends Component {

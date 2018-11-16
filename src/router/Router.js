@@ -1,3 +1,6 @@
+/**
+ * 路由集中整理，这里的只是显示在Layout组件里面的路由，通过登录、权限动态生成路由
+ */
 
 import PurchaseList from '@pages/purchaseList/PurchaseList'
 import UserList from '@pages/user/UserList'

@@ -1,3 +1,7 @@
+/**
+ * 修改密码弹窗组件
+ */
+
 import React, { Component } from 'react';
 import { Modal, Form, Input, Icon } from 'antd';
 

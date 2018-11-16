@@ -1,3 +1,6 @@
+/**
+ * 常用函数工具
+ */
 import { notification  } from 'antd'
 
 /**

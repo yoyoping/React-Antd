@@ -1,3 +1,6 @@
+/**
+ * 对axios的封装
+ */
 import axios from "axios"
 import qs from "qs"
 import ApiUrl from "./api"

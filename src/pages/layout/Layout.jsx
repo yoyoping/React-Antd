@@ -1,3 +1,6 @@
+/**
+ * Layout组件，包含除开登录其他所有路由
+*/
 import React, { Component } from 'react';
 import { Layout, Menu, Icon, Row, Col } from 'antd';
 import { Link } from 'react-router-dom';

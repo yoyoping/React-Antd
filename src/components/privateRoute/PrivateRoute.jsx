@@ -1,3 +1,6 @@
+/**
+ * 通过判断登录、权限 动态生成Route
+ */
 import React, { Component } from 'react';
 import Cookies from 'js-cookie'
 import { Switch, Route, Redirect } from 'react-router-dom';

@@ -1,3 +1,6 @@
+/**
+ * 个人信息操作的组件，头像、昵称、退出登录
+ */
 import React, { Component } from 'react';
 import { Menu, Dropdown, Icon, Avatar, Modal } from 'antd';
 import './mine.scss'

@@ -1,3 +1,6 @@
+/**
+ * 首页
+ */
 import React, { Component } from 'react';
 import { Calendar } from 'antd';
 
