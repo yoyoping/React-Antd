@@ -1,21 +1,12 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Icon, Row, Col } from 'antd';
-import { Route, Switch, Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './layout.scss';
 import Mine from '@components/mine/Mine';
 
-// import PurchaseList from '@pages/purchaseList/PurchaseList'
-// import UserList from '@pages/user/UserList'
-// import UserDetail from '@pages/userDetail/UserDetail'
-import NotFound from '@pages/error/NotFound'
-import NoPermissions from '@pages/error/NoPermissions'
-
-import RouterMap from '@/router/Router'
-import Cookies from 'js-cookie'
 import PrivateRoute from '@/components/privateRoute/PrivateRoute'
 
 const { Header, Sider, Content } = Layout;
-
 
 class Layout_ extends Component {
   constructor (props) {
@@ -56,9 +47,6 @@ class Layout_ extends Component {
   }
 
   render() {
-    const token = Cookies.get('token') // 获取当前是否登录
-    const auth = localStorage.getItem('auth') // 获取当前是否登录
-
     return (
       <Layout className="layout">
         <Sider
@@ -98,54 +86,8 @@ class Layout_ extends Component {
             </Row>
           </Header>
           <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
-            <Switch>
-              {
-                // 动态生成路由
-                RouterMap.map((item, index) => {
-                  return <Route
-                    key={index}
-                    path={item.path}
-                    exact
-                    render={props => { // 渲染route
-                      if (!item.needLogin) { // 不需要登录
-                        return <item.component {...props} />
-                      } else { // 需要登录
-                        if (token) { // 已登录
-                          if (!item.auth) { // 没有权限限制
-                            return <item.component {...props} />
-                          } else { // 有权限限制
-                            if (item.auth.includes(auth)) { // 拥有权限
-                              return <item.component {...props} />
-                            } else { // 未拥有权限
-                              // 重定向到未拥有权限页
-                              return <Redirect
-                                to={{
-                                  pathname: '/noPermissions',
-                                  state: { from: props.location }
-                                }}
-                              />
-                            }
-                          }
-                        } else { // 未登录
-                          // 重定向到登录页
-                          return <Redirect
-                            to={{
-                              pathname: '/login',
-                              state: { from: props.location }
-                            }}
-                          />
-                        }
-                      }
-                    }}
-                  />
-                })
-              }
-              {/* <PrivateRoute></PrivateRoute> */}
-              {/* 未拥有权限路由 */}
-              <Route path="/noPermissions" exact component={NoPermissions} />
-              {/* 404 页面未找到路由 */}
-              <Route component={NotFound} />
-            </Switch>
+            {/* 路由动态生成 */}
+            <PrivateRoute></PrivateRoute>
           </Content>
         </Layout>
       </Layout>
