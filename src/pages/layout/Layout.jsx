@@ -87,7 +87,7 @@ class Layout_ extends Component {
               </Col>
             </Row>
           </Header>
-          <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
+          <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280, position: 'relative' }}>
             {/* 路由动态生成 */}
             <PrivateRoute />
           </Content>

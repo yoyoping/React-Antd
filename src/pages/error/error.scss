@@ -1,0 +1,23 @@
+.error{
+  width: 100%;height: 100%;background-color: #F0F2F5;position: absolute;top: 0;left: 0;
+  display: flex;justify-content: center;padding-top: 100px;
+  .pic{
+    background-size: 100%;
+    height: 353px;margin-right: 150px;
+  }
+  .noP{
+    background-image: url('../../assets/svg/noAuth.svg');width: 300px;
+  }
+  .noF{
+    background-image: url('../../assets/svg/notfound.svg');width: 438px;
+  }
+  h2{
+    font-size: 72px;color: #434e59;margin-bottom: 20px;
+  }
+  .action{
+    padding-top: 60px;
+    p{
+      color: rgba(0,0,0,.45);font-size: 20px;
+    }
+  }
+}

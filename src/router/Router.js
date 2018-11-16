@@ -6,6 +6,7 @@ import PurchaseList from '@pages/purchaseList/PurchaseList'
 import UserList from '@pages/user/UserList'
 import UserDetail from '@pages/userDetail/UserDetail'
 import Home from '@pages/home/Home'
+import NoPermissions from '@pages/error/NoPermissions'
 
 /**
  * 获取组件
@@ -24,6 +25,7 @@ const RouterMap = [
   { path: '/purchaseList', name: '购买记录', component: PurchaseList, needLogin: true },
   { path: '/user', name: '管理员', component: UserList, needLogin: true, auth: ['admin'] },
   { path: '/userDetail/:id', name: '购买者详情', component: UserDetail, needLogin: true, auth: ['user'] },
+  { path: '/noPermissions', name: '403未拥有权限页', component: NoPermissions, needLogin: true },
   { path: '/', name: '首页', component: Home }
 ]
 

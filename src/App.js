@@ -5,6 +5,7 @@ import 'antd/dist/antd.css'
 import Layout from '@pages/layout/Layout';
 import Login from '@pages/login/Login';
 import history from '@utils/history'
+import NotFound from '@pages/error/NotFound'
 
 // Provider是react-redux两个核心工具之一，作用：将store传递到每个项目中的组件中
 // 第二个工具是connect，稍后会作介绍
@@ -33,6 +34,8 @@ class App extends Component {
               {/* 使用 component={ProtectPage} 将会拦截全部Layput下面的路由 */}
               {/* <Route path="/" component={ProtectPage} /> */} 
               <Route path="/" component={Layout} />
+              {/* 404 页面未找到路由 */}
+              <Route component={NotFound} />
             </Switch>
           </div>
         </Router>
