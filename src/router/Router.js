@@ -24,7 +24,7 @@ const RouterMap = [
   { path: '/purchaseList', name: '购买记录', component: PurchaseList, needLogin: true },
   { path: '/user', name: '管理员', component: UserList, needLogin: true, auth: ['admin'] },
   { path: '/userDetail/:id', name: '购买者详情', component: UserDetail, needLogin: true, auth: ['user'] },
-  { path: '/', name: '首页', component: Home },
+  { path: '/', name: '首页', component: Home }
 ]
 
 export default RouterMap

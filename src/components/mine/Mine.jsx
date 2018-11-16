@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import { Menu, Dropdown, Icon, Avatar, Modal } from 'antd';
 import './mine.scss'
 import ChangePwd from '@components/changePwd/ChangePwd'
+import Cookies from 'js-cookie'
 
 const confirm = Modal.confirm;
 
@@ -16,15 +17,19 @@ class Mine extends Component {
     }
   }
   
+  componentDidMount () {
+    console.log('属性：', this.props)
+  }
+
   onClick = ({ key }) => {
     if(key === 'logout') {
       confirm({
         title: '退出提示',
-        content: '您退出当前账号？',
-        onOk() {
+        content: '您确定退出当前账号？',
+        onOk: () => {
           localStorage.removeItem('auth')
+          Cookies.remove('token')
           this.props.history.push('/login')
-          console.log('退出')
         }
       })
     } else if (key === 'changePwd') {

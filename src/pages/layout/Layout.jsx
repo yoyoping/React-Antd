@@ -25,7 +25,6 @@ class Layout_ extends Component {
       collapsed: !this.state.collapsed,
     });
   }
-
   
   componentWillMount () {
     /**
@@ -84,13 +83,13 @@ class Layout_ extends Component {
                 />
               </Col>
               <Col span={2}>
-                <Mine></Mine>
+                <Mine {...this.props}></Mine>
               </Col>
             </Row>
           </Header>
           <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
             {/* 路由动态生成 */}
-            <PrivateRoute></PrivateRoute>
+            <PrivateRoute />
           </Content>
         </Layout>
       </Layout>
