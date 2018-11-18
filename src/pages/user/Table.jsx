@@ -22,7 +22,7 @@ const columns = [{
   align: 'center',
   dataIndex: 'endDate',
 }, {
-  title: '应付金额差值（ETH）',
+  title: '应付金额差值',
   dataIndex: 'amount',
   align: 'center',
   render: record => <span className="blue">{toETH(record)}</span>,

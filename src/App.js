@@ -35,7 +35,7 @@ class App extends Component {
               {/* <Route path="/" component={ProtectPage} /> */} 
               <Route path="/" component={Layout} />
               {/* 404 页面未找到路由 */}
-              <Route component={NotFound} />
+              {/* <Route exact component={NotFound} /> */}
             </Switch>
           </div>
         </Router>

@@ -64,7 +64,10 @@ class PrivateRoute extends Component {
         {/* 未拥有权限路由 */}
         <Route path="/noPermissions" exact component={NoPermissions} />
         {/* 404 页面未找到路由 */}
-        <Route component={NotFound} />
+        {
+          // 判断没找到页面地址如果未登录就跳转到登录，如果已登录就404
+          Cookies.get('token') ? <Route component={NotFound} /> : <Redirect to="/login" />
+        }
       </Switch>
       
     )

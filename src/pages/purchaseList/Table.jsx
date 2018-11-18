@@ -19,11 +19,11 @@ const columns = [{
   align: 'center',
   render: (record) => <Tag color="blue">{record}</Tag>
 }, {
-  title: '购买数量（ETH）',
+  title: '购买数量',
   align: 'center',
   dataIndex: 'number',
 }, {
-  title: '购买金额（ETH）',
+  title: '购买金额',
   dataIndex: 'amount',
   align: 'center',
   render: record => <span className="blue">{toETH(record)}</span>,
