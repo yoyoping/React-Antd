@@ -5,7 +5,7 @@ import 'antd/dist/antd.css'
 import Layout from '@pages/layout/Layout';
 import Login from '@pages/login/Login';
 import history from '@utils/history'
-import NotFound from '@pages/error/NotFound'
+// import NotFound from '@pages/error/NotFound'
 
 // Provider是react-redux两个核心工具之一，作用：将store传递到每个项目中的组件中
 // 第二个工具是connect，稍后会作介绍
