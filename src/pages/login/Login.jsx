@@ -4,7 +4,8 @@
 import React, { Component } from 'react';
 import { Form, Icon, Input, Button } from 'antd';
 import './login.scss';
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie';
+import PropTypes from 'prop-types';
 
 const FormItem = Form.Item;
 
@@ -53,6 +54,10 @@ class NormalLoginForm extends Component {
       </div>
     )
   }
+}
+
+NormalLoginForm.propTypes = {
+  history: PropTypes.object.isRequired
 }
 
 const Login = Form.create()(NormalLoginForm);

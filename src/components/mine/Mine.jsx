@@ -6,6 +6,7 @@ import { Menu, Dropdown, Icon, Avatar, Modal } from 'antd';
 import './mine.scss'
 import ChangePwd from '@components/changePwd/ChangePwd'
 import Cookies from 'js-cookie'
+import PropTypes from 'prop-types';
 
 const confirm = Modal.confirm;
 
@@ -68,4 +69,10 @@ class Mine extends Component {
     )
   }
 }
+
+// props验证
+Mine.propTypes = {
+  history: PropTypes.object.isRequired
+}
+
 export default Mine

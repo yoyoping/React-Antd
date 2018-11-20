@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Modal, Form, Input, Button } from 'antd';
+import PropTypes from 'prop-types';
 
 const FormItem = Form.Item;
 
@@ -62,6 +63,10 @@ class SetUser extends Component {
       </Modal>
     );
   }
+}
+
+SetUser.propTypes = {
+  close: PropTypes.func.isRequired
 }
 
 export default Form.create()(SetUser)
