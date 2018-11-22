@@ -18,10 +18,6 @@ class Mine extends Component {
     }
   }
   
-  componentDidMount () {
-    console.log('属性：', this.props)
-  }
-
   onClick = ({ key }) => {
     if(key === 'logout') {
       confirm({

@@ -70,6 +70,12 @@ class Layout_ extends Component {
                 <span>管理员</span>
               </Link>
             </Menu.Item>
+            <Menu.Item key="learn">
+              <Link to='/learn'>
+                <Icon type="edit" />
+                <span>学习测试</span>
+              </Link>
+            </Menu.Item>
           </Menu>
         </Sider>
         <Layout>
