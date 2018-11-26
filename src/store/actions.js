@@ -7,6 +7,7 @@ export function setPageTitle (data) {
   }
 }
 
+// 异步action
 export function setInfoList () {
   return (dispatch, getState) => { 
     Axios.get('http://120.78.128.49:9527/banner').then(res => {
@@ -15,5 +16,13 @@ export function setInfoList () {
     }).catch(err => {
       console.log(err)
     })
+  }
+}
+
+// 修改菜单列表
+export function setMenulist (data) {
+  return (dispatch, getState) => {
+    console.log(getState)
+    dispatch({ type: 'SET_MENULIST', data: data})
   }
 }
