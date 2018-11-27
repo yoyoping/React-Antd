@@ -81,7 +81,7 @@ class Layout_ extends Component {
                 />
               </Col>
               <Col span={2}>
-                <Mine {...this.props}></Mine>
+                <Mine />
               </Col>
             </Row>
           </Header>

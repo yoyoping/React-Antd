@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 import Cookies from 'js-cookie'
 import { Switch, Route, Redirect } from 'react-router-dom';
 import RouterMap from '@/router/Router'
-
 import NotFound from '@pages/error/NotFound'
 import NoPermissions from '@pages/error/NoPermissions'
 
@@ -69,7 +68,6 @@ class PrivateRoute extends Component {
           Cookies.get('token') ? <Route component={NotFound} /> : <Redirect to="/login" />
         }
       </Switch>
-      
     )
   }
 }

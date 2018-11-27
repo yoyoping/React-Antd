@@ -76,7 +76,13 @@ class Table_ extends Component {
 
   render () {
     return (
-      <Table bordered={true} rowClassName={this.setClassName} columns={columns} dataSource={data} rowKey={record => record.id} />
+      <Table
+        bordered={true}
+        rowClassName={this.setClassName}
+        columns={columns}
+        dataSource={data}
+        rowKey={record => record.id}
+      />
     )
   }
 }
