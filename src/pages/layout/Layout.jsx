@@ -6,8 +6,8 @@ import { Layout, Menu, Icon, Row, Col } from 'antd';
 import { Link } from 'react-router-dom';
 import './layout.scss';
 import Mine from '@components/mine/Mine';
-
 import PrivateRoute from '@/components/privateRoute/PrivateRoute'
+import { connect } from 'react-redux'
 
 const { Header, Sider, Content } = Layout;
 
@@ -58,24 +58,16 @@ class Layout_ extends Component {
         >
           <div className="logo">LOGO</div>
           <Menu theme="dark" mode="inline" defaultSelectedKeys={this.state.currentMenu}>
-            <Menu.Item key="purchaseList">
-              <Link to='/purchaseList'>
-                <Icon type="bars" />
-                <span>购买记录</span>
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="user">
-              <Link to='/user'>
-                <Icon type="user" />
-                <span>管理员</span>
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="learn">
-              <Link to='/learn'>
-                <Icon type="edit" />
-                <span>学习测试</span>
-              </Link>
-            </Menu.Item>
+            {
+              this.props.menulist.map(item => (
+                <Menu.Item key={item.name}>
+                  <Link to={item.name}>
+                    <Icon type={item.icon} />
+                    <span>{item.text}</span>
+                  </Link>
+                </Menu.Item>
+              ))
+            }
           </Menu>
         </Sider>
         <Layout>
@@ -89,7 +81,7 @@ class Layout_ extends Component {
                 />
               </Col>
               <Col span={2}>
-                <Mine {...this.props}></Mine>
+                <Mine />
               </Col>
             </Row>
           </Header>
@@ -103,4 +95,11 @@ class Layout_ extends Component {
   }
 }
 
-export default Layout_
+// mapStateToProps：将state映射到组件的props中
+const mapStateToProps = (state) => {
+  return {
+    menulist: state.menulist
+  }
+}
+
+export default connect(mapStateToProps)(Layout_)

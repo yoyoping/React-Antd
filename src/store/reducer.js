@@ -5,6 +5,7 @@ import defaultState from './state.js'
 
 // 一个reducer就是一个函数
 
+// 修改标题
 function pageTitle (state = defaultState.pageTitle, action) {
   switch (action.type) {
     case 'SET_PAGE_TITLE':
@@ -23,7 +24,22 @@ function infoList (state = defaultState.infoList, action) {
   }
 }
 
+/**
+ * 设置menulist
+ * @param {object} state 初始化的state
+ * @param {object} action 
+ */
+function menulist (state = defaultState.menulist, action) {
+  switch (action.type) {
+    case 'SET_MENULIST':
+      return action.data
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   pageTitle,
-  infoList
+  infoList,
+  menulist
 })

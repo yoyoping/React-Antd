@@ -28,6 +28,7 @@ class ChangePwd extends Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         Notification('success', '成功提示', '密码修改成功！')
+        this.handleCancel()
       }
     });
   }

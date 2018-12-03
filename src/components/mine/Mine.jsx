@@ -2,6 +2,7 @@
  * 个人信息操作的组件，头像、昵称、退出登录
  */
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { Menu, Dropdown, Icon, Avatar, Modal } from 'antd';
 import './mine.scss'
 import ChangePwd from '@components/changePwd/ChangePwd'
@@ -71,4 +72,4 @@ Mine.propTypes = {
   history: PropTypes.object.isRequired
 }
 
-export default Mine
+export default withRouter(Mine)

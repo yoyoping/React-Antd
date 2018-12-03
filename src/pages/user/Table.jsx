@@ -64,7 +64,13 @@ const setClassName = (record, index) => {
 
 function Table_ ()  {
   return (
-    <Table bordered={true} rowClassName={setClassName} columns={columns} dataSource={data} rowKey={record => record.id} />
+    <Table
+      bordered={true}
+      rowClassName={setClassName}
+      columns={columns}
+      dataSource={data}
+      rowKey={record => record.id}
+    />
   )
 }
 
