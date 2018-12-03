@@ -63,7 +63,7 @@ class PurchaseList extends Component {
           </FormItem>
         </Form>
         <br/>
-        <Table></Table>
+        <Table text="hahaha" />
       </div>
     );
   }

@@ -49,11 +49,6 @@ const data = [
 ];
 
 class UserDetail extends Component {
-
-  componentDidMount () {
-    console.log(this.props)
-  }
-
   /**
    * 给偶数行设置样式
    * @memberof UserDetail
@@ -67,7 +62,7 @@ class UserDetail extends Component {
   render () {
     return (
       <div>
-        <p>购买者： 阿斯顿发生过</p>
+        <p>购买者： {this.props.match.params.id}</p>
         <br/>
         <Table bordered={true} rowClassName={this.setClassName} columns={columns} dataSource={data} rowKey={record => record.id} />
       </div>

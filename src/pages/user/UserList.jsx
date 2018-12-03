@@ -84,7 +84,7 @@ class UserList extends Component {
           </FormItem>
         </Form>
         <br/>
-        <Table></Table>
+        <Table />
         <SetUser visible={this.state.visible} close={this.action}></SetUser>
       </div>
     );

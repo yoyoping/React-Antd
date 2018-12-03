@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Table, Tag } from 'antd';
 import { toETH } from '@utils'
 
@@ -52,23 +52,20 @@ const data = [
   }
 ];
 
-class Table_ extends Component {
-
-  /**
-   * 给偶数行设置样式
-   * @memberof UserDetail
-   */
-  setClassName = (record, index) => {
-    if (index % 2 === 0) {
-      return 'table-even'
-    }
+/**
+ * 给偶数行设置样式
+ * @memberof UserDetail
+*/
+const setClassName = (record, index) => {
+  if (index % 2 === 0) {
+    return 'table-even'
   }
+}
 
-  render () {
-    return (
-      <Table bordered={true} rowClassName={this.setClassName} columns={columns} dataSource={data} rowKey={record => record.id} />
-    )
-  }
+function Table_ ()  {
+  return (
+    <Table bordered={true} rowClassName={setClassName} columns={columns} dataSource={data} rowKey={record => record.id} />
+  )
 }
 
 export default Table_
