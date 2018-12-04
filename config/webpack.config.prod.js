@@ -230,6 +230,7 @@ module.exports = {
       '@store': path.resolve(__dirname, '../src/store'),
       '@fetch': path.resolve(__dirname, '../src/fetch'),
       '@axios': path.resolve(__dirname, '../src/fetch/axios.js'),
+      '@images': path.resolve(__dirname, '../src/assets/images'),
       '@': path.resolve(__dirname, '../src')
     },
     plugins: [

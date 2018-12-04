@@ -8,6 +8,7 @@ import UserDetail from '@pages/userDetail/UserDetail'
 import Home from '@pages/home/Home'
 import NoPermissions from '@pages/error/NoPermissions'
 import Usual from '@pages/learnTest/Usual'
+import Magnifier from '@pages/component/magnifier/Magnifier'
 
 /**
  * 获取组件
@@ -28,6 +29,8 @@ const RouterMap = [
   { path: '/userDetail/:id', name: '购买者详情', component: UserDetail, needLogin: true, auth: ['user'] },
   { path: '/noPermissions', name: '403未拥有权限页', component: NoPermissions, needLogin: true },
   { path: '/learn', name: '学习测试', component: Usual, needLogin: true, auth: ['admin'] },
+  { path: '/component', name: '组件案例', component: Magnifier, redirect: '/component/magnifier' },
+  { path: '/component/magnifier', name: '组件案例', component: Magnifier, needLogin: true, auth: ['admin'] },
   { path: '/', name: '首页', component: Home }
 ]
 

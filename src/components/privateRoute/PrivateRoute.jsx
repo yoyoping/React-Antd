@@ -27,6 +27,14 @@ class PrivateRoute extends Component {
               path={item.path}
               exact
               render={props => { // 渲染route
+                if (item.redirect) { // 如果设置了重定向那么重新跳转
+                  return <Redirect
+                    to={{
+                      pathname: item.redirect,
+                      state: { from: props.location }
+                    }}
+                  />
+                }
                 if (!item.needLogin) { // 不需要登录
                   return <item.component {...props} />
                 } else { // 需要登录
