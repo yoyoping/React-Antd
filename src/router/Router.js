@@ -31,7 +31,7 @@ const RouterMap = [
   { path: '/learn', name: '学习测试', component: Usual, needLogin: true, auth: ['admin'] },
   { path: '/component', name: '组件案例', component: Magnifier, redirect: '/component/magnifier' },
   { path: '/component/magnifier', name: '组件案例', component: Magnifier, needLogin: true, auth: ['admin'] },
-  { path: '/', name: '首页', component: Home }
+  { path: '/', name: '首页', component: Home, needLogin: true }
 ]
 
 export default RouterMap
