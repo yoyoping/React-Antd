@@ -61,7 +61,7 @@ class Layout_ extends Component {
             {
               this.props.menulist.map(item => (
                 <Menu.Item key={item.name}>
-                  <Link to={item.name}>
+                  <Link to={item.path}>
                     <Icon type={item.icon} />
                     <span>{item.text}</span>
                   </Link>
