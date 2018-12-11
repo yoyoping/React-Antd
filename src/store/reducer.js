@@ -5,41 +5,25 @@ import defaultState from './state.js'
 
 // 一个reducer就是一个函数
 
-// 修改标题
-function pageTitle (state = defaultState.pageTitle, action) {
-  switch (action.type) {
-    case 'SET_PAGE_TITLE':
-      return action.data
-    default: 
-      return state
-  }
-}
+// reducer Api
+const reducerslist = [
+  { title: '修改标题（测试）', state: 'pageTitle', actionType: 'SET_PAGE_TITLE' },
+  { title: '获取banner（测试）', state: 'infoList', actionType: 'SET_INFO_LIST' },
+  { title: '设置菜单列表', state: 'menulist', actionType: 'SET_MENULIST' }
+]
 
-function infoList (state = defaultState.infoList, action) {
-  switch (action.type) {
-    case 'SET_INFO_LIST':
-      return action.data
-    default:
-      return state
+let reducers = {}
+reducerslist.forEach(item => {
+  reducers[item.state] = (state = defaultState[item.state], action) => {
+    switch (action.type) {
+      case item.actionType:
+        return action.data
+      default:
+        return state
+    }
   }
-}
-
-/**
- * 设置menulist
- * @param {object} state 初始化的state
- * @param {object} action 
- */
-function menulist (state = defaultState.menulist, action) {
-  switch (action.type) {
-    case 'SET_MENULIST':
-      return action.data
-    default:
-      return state
-  }
-}
+})
 
 export default combineReducers({
-  pageTitle,
-  infoList,
-  menulist
+  ...reducers
 })
