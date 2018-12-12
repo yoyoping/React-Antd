@@ -14,21 +14,12 @@ export const Notification = (type, msg, des) => {
 }
 
 /**
- * 转为eth
- * @param {Number} value 要转为eth的值
+ * 转eth
+ * @param {Number} value 需要被转换的值
+ * @param {Number} num 需要保留的小数位数，默认5位小数
  */
-export const toETH = (value) => {
-  const newValue = value / 1e18
-  // 判断是否有超出小数，未超出就不截取，超出就截取
-  if (newValue.toString().indexOf('.') !== -1) {
-    if (newValue.toString().split('.')[1].length > 4) {
-      return newValue.toFixed(4)
-    } else {
-      return newValue
-    }
-  } else {
-    return newValue
-  }
+export const toETH = (value, num = 5) => {
+  return Math.floor(value / 1e18 * Math.pow(10, num)) / Math.pow(10, num)
 }
 
 // 格式化时间 2018-05-19T08:04:52.000+0000 -> 2018-05-19 08:04:52
